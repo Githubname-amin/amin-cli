@@ -1,0 +1,14 @@
+{
+  "name": "webObsever",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm run build -r",
+    "test": "pnpm run test -r",
+    "pubilsh": "pnpm publish -r"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
