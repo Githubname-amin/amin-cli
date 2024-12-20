@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "moduleResolution": "node", // 模块解析方式
+    "allowJs": true, // 启用对 JS 文件的支持
+    "checkJs": false, // 不对 JS 文件进行类型检查
+    "strict": true, // 启用严格模式
+    "esModuleInterop": true, // 允许对 CommonJS 模块的兼容性支持
+    "skipLibCheck": true, // 跳过类型声明文件的检查
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true
+  },
+  "include": ["src/**/*.js"],
+  "exclude": ["node_modules", "dist"]
+}
