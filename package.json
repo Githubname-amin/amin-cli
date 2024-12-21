@@ -1,18 +1,25 @@
 {
   "name": "amin-web-observer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "尝试编写一个npm包，用来返回一个对象，让引用者获得页面数据",
-  "main": "index.js",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/types.d.ts",
   "scripts": {
     "build": "rollup -c",
     "publish": "changeset publish --registry=https://registry.npmjs.com/",
-    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "watch": "rollup -c --watch"
   },
   "keywords": [
     "web",
     "tracking",
     "performance",
     "behavior"
+  ],
+  "files": [
+    "dist",
+    "README.md"
   ],
   "author": "amin",
   "license": "ISC",

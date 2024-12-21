@@ -13,7 +13,10 @@ export function start() {
 
   if (config.enablePerformanceTracking) {
     const metrics = collectPerformanceMetrics();
-    updateDataSet(id, "performanceMetrics", metrics);
+    updateDataSet(id, "performanceMetrics", () => {
+      // 性能指标可能存在多次收集，所以需要合并
+      return [metrics];
+    });
   }
   if (config.enableBehaviorTracking) {
     stopBehaviorTracking = initBehaviorTracking(id);

@@ -12,9 +12,9 @@ export function createDataSet(id) {
   dataStore.activeDataSets[id] = {
     id,
     startTime: Date.now(),
-    performanceMetrics: {}, //性能指标
-    userActions: {}, //用户行为
-    customData: {}, //业务字段
+    performanceMetrics: [], //性能指标
+    userActions: [], //用户行为
+    customData: [], //业务字段
   };
 }
 
@@ -27,15 +27,16 @@ export function getDataSet(id) {
 export function deleteDataSet(id) {
   const data = dataStore.activeDataSets[id];
   delete dataStore.activeDataSets[id];
-  console.log("成功删除信息", data);
+  // console.log("成功删除信息", data, dataStore.activeDataSets);
   return data;
 }
 
 // 更新子数据集的方法
-export function updateDataSet(id, key, value) {
+export function updateDataSet(id, key, callback) {
+  // console.log("更新数据", id, key, callback);
   const dataSet = getDataSet(id);
   if (dataSet) {
-    dataSet[key] = value;
+    dataSet[key] = callback(dataSet[key]);
   }
 }
 
